@@ -12,7 +12,7 @@ contract TicketNFT is ERC1155, ITicketNFT {
     address ownerAddr;
     address senderAddr;
 
-    constructor(address marketAddr) ERC1155("https://pornhub.com/penis/{id}.json") {
+    constructor(address marketAddr) ERC1155("https://cs.toronto.edu/{id}.json") {
         // maybe should be to
         ownerAddr = marketAddr;
         senderAddr = msg.sender;
