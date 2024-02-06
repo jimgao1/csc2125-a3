@@ -5,8 +5,24 @@ import {ERC1155} from "@openzeppelin/contracts/token/ERC1155/ERC1155.sol";
 import {ITicketNFT} from "./interfaces/ITicketNFT.sol";
 
 // Uncomment this line to use console.log
-// import "hardhat/console.sol";
+import "hardhat/console.sol";
 
 contract TicketNFT is ERC1155, ITicketNFT {
-    // your code goes here (you can do it!)
+
+    address ownerAddr;
+    address senderAddr;
+
+    constructor(address marketAddr) ERC1155("https://pornhub.com/penis/{id}.json") {
+        // maybe should be to
+        ownerAddr = marketAddr;
+        senderAddr = msg.sender;
+    }
+
+    function mintFromMarketPlace(address to, uint256 nftId) public {
+        _mint(to, nftId, 1, "");
+    }
+
+    function owner() public view returns (address owneraddr) {
+        return ownerAddr;
+    }
 }

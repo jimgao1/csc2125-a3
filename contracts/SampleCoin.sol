@@ -6,5 +6,8 @@ import {ERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 // import "hardhat/console.sol";
 
 contract SampleCoin is ERC20 {
-    // your code goes here (you can do it!)
+    constructor() ERC20("SampleCoin", "SMPL") {
+        // TODO: remove this hardcode
+        _mint(msg.sender, 1e20);
+    }
 }
